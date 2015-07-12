@@ -1,0 +1,7 @@
+name             'test-openstack'
+maintainer       'YOUR_NAME'
+maintainer_email 'YOUR_EMAIL'
+license          'All rights reserved'
+description      'Installs/Configures test-openstack'
+long_description 'Installs/Configures test-openstack'
+version          '0.1.0'

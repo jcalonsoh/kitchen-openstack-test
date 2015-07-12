@@ -1,0 +1,33 @@
+---
+driver:
+  name: openstack
+  openstack_username: admin
+  openstack_api_key: 253d56c6142c4c79
+  openstack_auth_url: http://172.17.101.149:5000/v2.0/tokens
+  require_chef_omnibus: true
+  image_ref: CentOS-6
+  flavor_ref: m1.large
+  openstack_tenant: admin
+  server_name: openstack-test
+  network_ref:
+    - private_network
+  public_key_path: openstack/cloud.key.pub
+  private_key_path: openstack/cloud.key
+  username: centos
+  key_name: cloud
+  floating_ip: 172.17.101.203
+  floating_ip_pool:
+      - external_network
+  no_ssh_tcp_check: true
+  no_ssh_tcp_check_sleep: 30
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: centos-6.6
+
+suites:
+  - name: default
+    run_list:
+    attributes:
